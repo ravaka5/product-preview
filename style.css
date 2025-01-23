@@ -4,16 +4,17 @@ body
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: hsl(30, 38%, 92%);
-    padding-top: 10vw;
 }
 
 main
 {
+    margin: auto;
     width: 90vw;
     background: hsl(0, 0%, 100%);
     border-radius: 15px;
@@ -36,22 +37,12 @@ main
     font-family: 'Montserrat';
     font-weight: 500;
     color: hsl(228, 12%, 48%);
-    margin: 16px 0px;
+    margin: 12px 0px;
     text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 3px;
-}
-
-.header h1
-{
-    font-family: 'Fraunces', sans-serif;
-    color: hsl(212, 21%, 14%);
-    margin: 0px;
-}
-
-.description p{
-    font-family: 'Montserrat';
-    color: hsl(228, 12%, 48%);
+    .part:not(:last-child)
+    {
+        margin-bottom: 10px;
+    }
     line-height: 150%;
 }
 .pricing
@@ -66,13 +57,13 @@ main
 .pricing #big-price
 {
     font-family: 'Fraunces';
-    font-size: 30px;
+    font-size: 20px;
     color: hsl(158, 36%, 37%);
 }
 
 .pricing #small-price
 {
-    font-size: 12px;
+    font-size: 8px;
     font-family: 'Montserrat';
     text-decoration: line-through;
     color: hsl(228, 12%, 48%);
@@ -85,6 +76,12 @@ main
     align-items: center;
     width: 100%;
 }
+
+.btn img
+    {
+        margin: 0px 10px;
+    }
+    
 button
 {
     width: fit-content;
@@ -92,11 +89,11 @@ button
     background: hsl(158, 36%, 37%);
     border: none;
     color: white;
-    margin: 20px;
+    margin: 16px;
     padding: 10px 0px;
     border-radius: 6px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 10px;
 }
 footer
 {
@@ -104,4 +101,116 @@ footer
     bottom:0;
     width: 100%;
     text-align: center;
+}
+
+.desktop
+{
+    display: none;
+}
+
+@media screen and (min-width:500px)
+{
+    .mobile{
+        display: none;
+    }
+
+    .desktop{
+        display: inline;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    body{
+        padding-top: 2vw;
+        vertical-align: middle;
+    }
+
+
+    main
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0px;
+        width: 600px;
+    }
+
+    .part
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .container
+    {
+        padding: 20px ;
+    }
+    .pricing
+    {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+
+    .header_img img{
+        border-radius: 15px 0px 0px 15px ;
+    }
+
+    .pricing #big-price
+    {
+        font-size: 40px;
+    }
+
+    .pricing #small-price
+    {
+        font-size: 16px;
+    }
+
+    .header h2
+    {
+        font-size: 14px;
+        margin: 16px 0px;
+    }
+
+    .header h1
+    {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .description p
+    {
+        font-size: 14px;
+    }
+
+
+    .pricing #big-price
+    {
+        font-size:40px;
+    }
+
+    .pricing #small-price
+    {
+        font-size: 12px;
+    }
+
+    .pricing{
+        margin-bottom: 5px;
+    }
+
+    .btn{
+        display: flex;
+
+    }
+    .btn button
+    {
+        font-size: 16px;
+        padding: 14px 0px;
+        margin-bottom: 0px;
+    }
+
+    
+
 }
